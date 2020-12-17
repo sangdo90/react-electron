@@ -1,7 +1,7 @@
 export const MENU_LIST = [
   {
     path: "/chapter1",
-    name: "챕터1",
+    name: "Project Init",
   },
   {
     path: "/chapter2",

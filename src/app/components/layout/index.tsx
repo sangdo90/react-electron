@@ -29,10 +29,11 @@ const Title = styled.div`
   margin-top: 30px;
   box-sizing: border-box;
   text-align: center;
-  border-bottom: 1px solid #dfe4ee;
+  border-bottom: 3px solid #dfe4ee;
+  padding-bottom: 55px;
   & h1 {
     z-index: 100;
-    font-size: 24px;
+    font-size: 34px;
     line-height: 40px;
     color: #01385c;
     font-weight: bold;
