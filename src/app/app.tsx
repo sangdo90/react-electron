@@ -1,11 +1,11 @@
-import React from "react";
-
+import Routes from "./routes";
+import { useEffect } from "react";
 const App = () => {
-  return (
-    <div className="app">
-      <h1>I'm React running in Electron App!!</h1>
-    </div>
-  );
+  useEffect(() => {
+    document.title = `Electron + React`;
+  }, []);
+
+  return <Routes />;
 };
 
 export default App;
