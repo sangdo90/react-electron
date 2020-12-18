@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { MENU_LIST } from "./menu";
@@ -67,10 +67,6 @@ const Navigation = styled.div`
 `;
 
 export const SideMenu = () => {
-  MENU_LIST.map((data) => {
-    console.log(data);
-  });
-
   return (
     <Menu>
       <Navigation id="navigation">

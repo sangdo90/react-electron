@@ -1,5 +1,35 @@
-export const packageJSON =`
+export const InstallContents = `
+# 1. Install
+
+\`\`\`
+mkdir electron-react-app
+cd electron-react-app
+npm init
+npm install electron --save-dev
+\`\`\`
+
+
+### electron-react-app/package.json
+\`\`\`json
 {
+  "name": "electron-react-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  ...
+}
+\`\`\`
+`;
+
+
+
+export const createProject=`
+mkdir electron-react-app
+cd electron-react-app
+npm init
+npm install electron --save-dev`;
+
+export const packageJSON =`{
   "name": "electron-react-app",
   "version": "1.0.0",
   "description": "",
@@ -14,21 +44,21 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\\.(js|jsx)$/,
           exclude: /node_modules/,
           use: {
             loader: "babel-loader"
           }
         },
         {
-          test: /\.html$/,
+          test: /\\.html$/,
           use: {
             loader: "html-loader",
             options: { minimize: true }
           }
         },
         {
-          test: /\.css$/,
+          test: /\\.css$/,
           use: ['style-loader', 'css-loader']
         }
       ]
