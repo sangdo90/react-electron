@@ -1,16 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-// Electron Webpack Configuration
+function srcPaths(src) {
+    return path.join(__dirname, src);
+  }
+
 const electronConfiguration = {
-    // Build Mode
     mode: 'development',
-    // Electron Entrypoint
     entry: './src/main.ts',
     target: 'electron-main',
     resolve: {
         alias: {
-            ['@']: path.resolve(__dirname, 'src')
+            '@': srcPaths('src'),
         },
         extensions: ['.tsx', '.ts', '.js'],
     },
@@ -34,7 +35,11 @@ const reactConfiguration = {
     devtool: 'source-map',
     resolve: {
         alias: {
-            ['@']: path.resolve(__dirname, 'src')
+            '@': srcPaths('src'),
+            '@app': srcPaths('src/app'),
+            '@pages': srcPaths('src/app/pages'),
+            '@routes': srcPaths('src/app/routes'),
+            '@components': srcPaths('src/app/components'),
         },
         extensions: ['.tsx', '.ts', '.js'],
     },

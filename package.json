@@ -11,20 +11,32 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/history": "^4.7.8",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/react-syntax-highlighter": "^13.5.0",
+    "@types/styled-components": "^5.1.7",
     "css-loader": "^5.0.1",
     "electron": "^11.1.0",
+    "history": "^5.0.0",
     "html-webpack-plugin": "^4.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-markdown": "^5.0.3",
+    "react-router-dom": "^5.2.0",
+    "react-syntax-highlighter": "^15.4.3",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
+    "styled-components": "^5.2.1",
     "ts-loader": "^8.0.12",
     "tsc": "^1.20150623.0",
     "typescript": "^4.1.3",
     "webpack": "^5.11.0",
     "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "react-pro-sidebar": "^0.5.0"
   }
 }
