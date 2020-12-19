@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {SideMenu} from '../sidemenu'
+import {  SideBar2 } from '../sidemenu';
 
 const Wrap = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ export const Layout = (props: LayoutProps) => {
   return (
     <Wrap>
       <Main>
-        <SideMenu />
+        <SideBar2/>
         <Contents>
           <Title>
             <h1> {props.title} </h1>

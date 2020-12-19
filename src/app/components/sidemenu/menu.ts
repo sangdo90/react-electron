@@ -8,3 +8,22 @@ export const MENU_LIST = [
         name: "챕터2",
     },
 ];
+
+
+export const MENU_LIST2 = {
+    Install: {
+        "create-react-app": {
+            path: '/CRA',
+        },
+        "Webpack": {
+            path: '/webpack'
+        }
+    },
+    Chapter2: {
+        path: '/chapter2'
+    },
+    Chapter3: {
+        path: '/chapter3'
+    }
+}
+
