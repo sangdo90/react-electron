@@ -1,10 +1,16 @@
+
 import React from "react";
 import styled from "styled-components";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Block = styled.div`
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  & p {
+    font-size:25px;
+    margin-bottom : 5px;
+  }
 `;
 
 interface CodeBlockProps {

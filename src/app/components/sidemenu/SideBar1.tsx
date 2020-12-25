@@ -23,24 +23,20 @@ const Navigation = styled.div`
     padding: 0px;
     font-size: 16px;
     min-width: 250px;
-
 & ul {
     height: 60px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 & li {
     width: 250px;
     padding: 0px;
 }
-
 & li.menu {
     border-bottom: 1px solid #dfe4ee;
     box-sizing: border-box;
 }
-
 & li a {
     color: #ffffff;
     display: block;
@@ -52,7 +48,6 @@ const Navigation = styled.div`
     text-decoration: none;
     transition: all 1s;
 }
-
 & li a:hover,
 & ul li:hover a {
     color: #fff;
@@ -60,28 +55,27 @@ const Navigation = styled.div`
     text-decoration: none;
     font-weight: bold;
 }
-
 &>ul>li>a:hover {
     font-weight: bold;
 }
 `;
 
-export const SideMenu = () => {
-  return (
-    <Menu>
-      <Navigation id="navigation">
-        <ul>
-          {MENU_LIST.map((data) => {
-            return (
-              <li key={data.path} className="menu">
-                <NavLink exact to={data.path}>
-                  {data.name}
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      </Navigation>
-    </Menu>
-  );
+export const SideBar1 = () => {
+    return (
+        <Menu>
+            <Navigation id="navigation">
+                <ul>
+                    {MENU_LIST.map((data) => {
+                        return (
+                            <li key={data.path} className="menu">
+                                <NavLink exact to={data.path}>
+                                    {data.name}
+                                </NavLink>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </Navigation>
+        </Menu>
+    );
 };
