@@ -36,6 +36,14 @@ const compareIsNotDevMd = `
 Webpack으로 묶인 React 파일이 Electron 앱에 포함되어서 실행 파일로 만들어짐
 `;
 
+const ejectMd = `
+기본적으로 CRA는 프로젝트 디렉토리를 간결하게 유지하기 위해서 웹팩 설정이나 script들의 자세한 동작을 명시한 script 폴더를 숨겨 놓음  
+숨겨진 세부 설정을 커스텀해야 할 필요가 있다면  
+\`yarn eject\` 또는 \`npm run eject\` 커맨드를 입력하여  
+숨겨놓은 설정 파일들을 프로젝트에 표시되게끔 만들 수 있음
+** eject를 한 번 하면 이전 상태로 돌아갈 수 없음 **
+`;
+
 
 const IsDevImg = (): JSX.Element => {
   return (
@@ -98,8 +106,6 @@ export const CRA = () => {
         source={compareIsNotDevMd}
         renderers={{ image: BuildImg }} />
 
-
-
       <CodeBlock
         comment="package.json 파일 수정"
         language="json" >
@@ -111,6 +117,10 @@ export const CRA = () => {
         language="bash" >
         {yarnStart}
       </CodeBlock>
+
+      <ReactMarkdown
+        source={ejectMd}
+        />
 
     </Layout>
   );
