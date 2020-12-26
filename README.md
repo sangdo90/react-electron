@@ -7,7 +7,7 @@ git checkout electron-cra-version
 yarn
 ```
 
-### run electron
+### run electrons
 `yarn start`
 
 ### build electron
