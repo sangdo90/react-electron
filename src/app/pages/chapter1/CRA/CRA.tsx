@@ -1,12 +1,26 @@
 import React from "react";
-import { Layout, CodeBlock } from "../../../components";
+import { Layout, CodeBlock, Figure } from "../../../components";
 import ReactMarkdown from "react-markdown";
+import styled from "styled-components";
 import { elecIsDevInstall, electronJs, installElectronTools, installIsDev, ProjectSetup, yarnStart, packageJson } from './CRACodeContents';
-import isDevImg from '../../../assets/images/is_dev.png';
-import buildImg from '../../../assets/images/build_electron.png';
-
 
 const title: string = " Create React App + electron ";
+
+const HorizontalContents = styled.div`
+display : flex;
+`;
+const LeftContent = styled.div`
+flex : 1;
+margin-right : 40px;
+`;
+const MiddleContent = styled.div`
+flex : 1;
+margin : auto;
+`;
+const RightContent = styled.div`
+flex : 1;
+margin-left : 40px;
+`;
 
 const craInstallMd = `**Create React App 기반으로 typescript 기반 react 프로젝트 생성**`;
 
@@ -37,13 +51,18 @@ Webpack으로 묶인 React 파일이 Electron 앱에 포함되어서 실행 파�
 `;
 
 const ejectMd = `
+## Eject  
 기본적으로 CRA는 프로젝트 디렉토리를 간결하게 유지하기 위해서 웹팩 설정이나 script들의 자세한 동작을 명시한 script 폴더를 숨겨 놓음  
 숨겨진 세부 설정을 커스텀해야 할 필요가 있다면  
-\`yarn eject\` 또는 \`npm run eject\` 커맨드를 입력하여  
-숨겨놓은 설정 파일들을 프로젝트에 표시되게끔 만들 수 있음
-** eject를 한 번 하면 이전 상태로 돌아갈 수 없음 **
+\`yarn eject\` 또는 \`npm run eject\` 사용해서    
+숨겨놓은 설정 파일들을 프로젝트에 표시되게끔 만들 수 있음  
+**eject를 한 번 하면 이전 상태로 돌아갈 수 없음**
 `;
 
+const isDevImg = './images/is_dev.png';
+const buildImg = './images/build_electron.png';
+const configImg = './images/config_dir.png';
+const scirptsImg = './images/scripts_dir.png';
 
 const IsDevImg = (): JSX.Element => {
   return (
@@ -61,8 +80,6 @@ export const CRA = () => {
 
   return (
     <Layout title={title}>
-
-      {/* <ReactMarkdown source={InstallContents} /> */}
 
       <CodeBlock
         comment="Project setup"
@@ -120,8 +137,21 @@ export const CRA = () => {
 
       <ReactMarkdown
         source={ejectMd}
-        />
+      />
 
+      <HorizontalContents>
+        <LeftContent>
+          <Figure
+            srcUrl={configImg}
+            caption="config 디렉터리" />
+        </LeftContent>
+
+        <RightContent>
+          <Figure
+            srcUrl={scirptsImg}
+            caption="config 디렉터리" />
+        </RightContent>
+      </HorizontalContents>
     </Layout>
   );
 };
