@@ -1,12 +1,32 @@
 import React from "react";
 import { Layout, CodeBlock } from "../../../components";
 import ReactMarkdown from "react-markdown";
+import styled from "styled-components";
 import { elecIsDevInstall, electronJs, installElectronTools, installIsDev, ProjectSetup, yarnStart, packageJson } from './CRACodeContents';
 import isDevImg from '../../../assets/images/is_dev.png';
 import buildImg from '../../../assets/images/build_electron.png';
+import configImg from '../../../assets/images/config_dir.png';
+import scirptsImg from '../../../assets/images/scripts_dir.png';
+import { config } from "process";
 
 
 const title: string = " Create React App + electron ";
+
+const HorizontalContents = styled.div`
+display : flex;
+`;
+const LeftContent = styled.div`
+flex : 1;
+margin-right : 40px;
+`;
+const MiddleContent = styled.div`
+flex : 1;
+margin : auto;
+`;
+const RightContent = styled.div`
+flex : 1;
+margin-left : 40px;
+`;
 
 const craInstallMd = `**Create React App 기반으로 typescript 기반 react 프로젝트 생성**`;
 
@@ -120,7 +140,21 @@ export const CRA = () => {
 
       <ReactMarkdown
         source={ejectMd}
-        />
+      />
+
+      <HorizontalContents>
+        <LeftContent>
+          <figure>
+            <img src={configImg} alt="./config 디렉터리 내 파일들" />
+            <figcaption>rmfla1 </figcaption>
+          </figure>
+        </LeftContent>
+
+        <RightContent>
+          <img src={scirptsImg} />
+        </RightContent>
+
+      </HorizontalContents>
 
     </Layout>
   );
