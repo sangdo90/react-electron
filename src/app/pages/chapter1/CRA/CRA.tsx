@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, CodeBlock } from "../../../components";
+import { Layout, CodeBlock, Figure } from "../../../components";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import { elecIsDevInstall, electronJs, installElectronTools, installIsDev, ProjectSetup, yarnStart, packageJson } from './CRACodeContents';
