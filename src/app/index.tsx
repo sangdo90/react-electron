@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
+import { RecoilRoot } from "recoil";
 import Routes from "./routes";
 
 const App = () => {
-    useEffect(() => {
-        document.title = `Electron + React`;
-    }, []);
+  useEffect(() => {
+    document.title = `Electron + React`;
+  }, []);
 
-    return <Routes />;
+  return (
+    <RecoilRoot>
+      <Routes />
+    </RecoilRoot>
+  );
 };
 export default App;

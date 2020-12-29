@@ -1,23 +1,56 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 // import { createBrowserHistory, History } from "history";
-import { CreatedWebpack, CRA, Chapter2, Chapter3 } from "../pages";
+import { MENU_LIST } from "../components/sidemenu/menu";
+import { CRA, CreatedWebpack } from "../pages";
 
 // const history: History = createBrowserHistory();
 
 const Routes = () => {
-    return (
-        <Router>
-            <Switch>
-                <Route exact path="/" component={CreatedWebpack} />
-                <Route exact path="/CRA" component={CRA} />
-                <Route exact path="/webpack" component={CreatedWebpack} />
-                <Route exact path="/chapter2" component={Chapter2} />
-                <Route exact path="/chapter3" component={Chapter3} />
-                <Redirect path="*" to="/" />
-            </Switch>
-        </Router>
-    );
+  const [menu, setMenu] = useState<any[]>([]);
+  useEffect(() => {
+    init();
+  }, []);
+
+  const init = () => {
+    let tmpMenu: any[] = [];
+    Object.keys(MENU_LIST).map((key) => {
+      let secMenu = Object.keys((MENU_LIST as any)[key]);
+      if (secMenu.includes("path")) {
+        tmpMenu.push((MENU_LIST as any)[key]);
+      } else {
+        Object.keys((MENU_LIST as any)[key]).map((secKey) => {
+          tmpMenu.push((MENU_LIST as any)[key][secKey]);
+        });
+      }
+    });
+    setMenu(tmpMenu);
+  };
+
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={CRA} />
+        {menu.map((data, i) => {
+          const { component: Component, ...rest } = data;
+          return (
+            <Route
+              exact
+              key={i.toString()}
+              {...rest}
+              render={(routeProps) => <Component {...routeProps} />}
+            />
+          );
+        })}
+        <Redirect path="*" to="/" />
+      </Switch>
+    </Router>
+  );
 };
 
 export default Routes;
