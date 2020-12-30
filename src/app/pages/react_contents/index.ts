@@ -1,2 +1,2 @@
-export { Recoil } from "./Recoil";
-export { Redux } from "./Redux";
+export { Recoil } from "./recoil/Recoil";
+export { Redux } from "./redux/Redux";

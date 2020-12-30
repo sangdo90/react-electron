@@ -21,15 +21,18 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        onChange={onChangeContent}
-        value={content}
-        placeholder="내용"
-      />
-      <button type="submit">입력</button>
-    </form>
+    <div>
+      <h1>TODO LIST (Recoil)</h1>
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          onChange={onChangeContent}
+          value={content}
+          placeholder="내용"
+        />
+        <button type="submit">입력</button>
+      </form>
+    </div>
   );
 };
 

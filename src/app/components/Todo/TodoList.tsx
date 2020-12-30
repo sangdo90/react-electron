@@ -1,6 +1,5 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-
 import { todoStore } from "../../store/todo";
 import TodoItem from "./TodoItem";
 

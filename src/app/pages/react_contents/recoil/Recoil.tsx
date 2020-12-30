@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
-import { Layout, CodeBlock } from "../../components";
+import { Layout, CodeBlock } from "../../../components";
 import { RecoilMd } from "./RecoilContents";
-import TodoList from "../../components/Todo/TodoList";
-import TodoForm from "../../components/Todo/TodoForm";
+import TodoList from "../../../components/Todo/TodoList";
+import TodoForm from "../../../components/Todo/TodoForm";
 import {
   TodoFormCode,
   TodoItemCode,
