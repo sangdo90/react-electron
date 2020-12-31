@@ -1,17 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
-import { Layout, CodeBlock } from "../../../components";
-import { RecoilMd } from "./RecoilContents";
+import { Layout } from "../../../components";
+import Markdown from "../../../components/markdown/RenderedMarkdown";
+import {
+  AtomMd,
+  RecoilRootMd,
+  TodoFormMd,
+  TodoListMd,
+  UseRecoilStateMd,
+  IntroMd,
+  SelectorMd,
+  TodoDemoMd,
+  RootRecoilMd,
+  TodoItemMd,
+  TodoAtomMd,
+  TodoRootMd
+} from "./RecoilMd";
 import TodoList from "../../../components/Todo/TodoList";
 import TodoForm from "../../../components/Todo/TodoForm";
-import {
-  TodoFormCode,
-  TodoItemCode,
-  TodoListCode,
-  AtomCode,
-  RecoilRootCode,
-} from "./RecoilContents";
 
 const title: string = "Recoil";
 
@@ -28,28 +35,22 @@ const demo = `
 export const Recoil = () => {
   return (
     <Layout title={title}>
-      <ReactMarkdown source={RecoilMd} />
+      <Markdown content={IntroMd} />
+      <Markdown content={RecoilRootMd} />
+      <Markdown content={AtomMd} />
+      <Markdown content={UseRecoilStateMd} />
+      <Markdown content={SelectorMd} />
 
-      <CodeBlock comment="./src/app/index.tsx" language="tsx">
-        {RecoilRootCode}
-      </CodeBlock>
 
-      <CodeBlock comment="./src/app/store/todo.ts" language="typescript">
-        {AtomCode}
-      </CodeBlock>
+      <Markdown content={TodoDemoMd} />
+      <Markdown content={TodoRootMd} />
+      <Markdown content={TodoAtomMd} />
+      <Markdown content={RootRecoilMd} />
+      <Markdown content={TodoFormMd} />
+      <Markdown content={TodoItemMd} />
+      <Markdown content={TodoListMd} />
 
-      <CodeBlock comment="./src/app/compoents/Todo/TodoItem.tsx" language="tsx">
-        {TodoItemCode}
-      </CodeBlock>
-
-      <CodeBlock comment="./src/app/compoents/Todo/TodoList.tsx" language="tsx">
-        {TodoListCode}
-      </CodeBlock>
-
-      <CodeBlock comment="./src/app/compoents/Todo/TodoForm.tsx" language="tsx">
-        {TodoFormCode}
-      </CodeBlock>
-
+      {/* Recoil TODO Demo */}
       <ReactMarkdown source={demo} />
       <Demo>
         <TodoForm />

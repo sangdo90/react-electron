@@ -2,24 +2,32 @@ import React from "react";
 import { Layout, CodeBlock, Figure } from "../../../components";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import { elecIsDevInstall, electronJs, installElectronTools, installIsDev, ProjectSetup, yarnStart, packageJson } from './CRACodeContents';
+import {
+  elecIsDevInstall,
+  electronJs,
+  installElectronTools,
+  installIsDev,
+  ProjectSetup,
+  yarnStart,
+  packageJson,
+} from "./CRACodeContents";
 
 const title: string = " Create React App + electron ";
 
 const HorizontalContents = styled.div`
-display : flex;
+  display: flex;
 `;
 const LeftContent = styled.div`
-flex : 1;
-margin-right : 40px;
+  flex: 1;
+  margin-right: 40px;
 `;
 const MiddleContent = styled.div`
-flex : 1;
-margin : auto;
+  flex: 1;
+  margin: auto;
 `;
 const RightContent = styled.div`
-flex : 1;
-margin-left : 40px;
+  flex: 1;
+  margin-left: 40 px;
 `;
 
 const craInstallMd = `**Create React App 기반으로 typescript 기반 react 프로젝트 생성**`;
@@ -31,7 +39,6 @@ const toolsMd = `
 * wait-on : 특정 포트 또는 파일이 활성화 될 때까지 대기할수 있음
 * cross-env : 시스템에 관계없이 환경변수 값을 설정
 `;
-
 
 const isDevMd = `
 현재 환경이 개발 환경인지 아닌지 확인해주는 패키지.  
@@ -59,97 +66,79 @@ const ejectMd = `
 **eject를 한 번 하면 이전 상태로 돌아갈 수 없음**
 `;
 
-const isDevImg = './images/is_dev.png';
-const buildImg = './images/build_electron.png';
-const configImg = './images/config_dir.png';
-const scirptsImg = './images/scripts_dir.png';
+const isDevImg = "./images/is_dev.png";
+const buildImg = "./images/build_electron.png";
+const configImg = "./images/config_dir.png";
+const scirptsImg = "./images/scripts_dir.png";
 
 const IsDevImg = (): JSX.Element => {
   return (
-    <img src={isDevImg} alt="isDev" />
-  )
-}
+    <img
+      src={isDevImg}
+      alt="isDev"
+      style={{ maxWidth: "100%", height: "auto", minWidth: "700px" }}
+    />
+  );
+};
 
 const BuildImg = (): JSX.Element => {
   return (
-    <img src={buildImg} />
-  )
-}
+    <img
+      src={buildImg}
+      style={{ maxWidth: "100%", height: "auto", minWidth: "700px" }}
+    />
+  );
+};
 
 export const CRA = () => {
-
   return (
     <Layout title={title}>
-
-      <CodeBlock
-        comment="Project setup"
-        language="bash">
+      <CodeBlock comment="Project setup" language="bash">
         {ProjectSetup}
       </CodeBlock>
 
-      <ReactMarkdown
-        source={craInstallMd} />
+      <ReactMarkdown source={craInstallMd} />
 
-      <CodeBlock
-        comment="개발시 유용한 패키지 install"
-        language="bash" >
+      <CodeBlock comment="개발시 유용한 패키지 install" language="bash">
         {installElectronTools}
       </CodeBlock>
 
-      <ReactMarkdown
-        source={toolsMd} />
+      <ReactMarkdown source={toolsMd} />
 
-      <CodeBlock
-        comment="electron-is-dev 패키지 설치"
-        language="bash" >
+      <CodeBlock comment="electron-is-dev 패키지 설치" language="bash">
         {installIsDev}
       </CodeBlock>
 
-      <ReactMarkdown
-        source={isDevMd} />
+      <ReactMarkdown source={isDevMd} />
 
-      <CodeBlock
-        comment="./public/electron.js 파일 생성"
-        language="javascript" >
+      <CodeBlock comment="./public/electron.js 파일 생성" language="javascript">
         {electronJs}
       </CodeBlock>
 
-
-      <ReactMarkdown
-        source={compareIsDevMd}
-        renderers={{ image: IsDevImg }} />
+      <ReactMarkdown source={compareIsDevMd} renderers={{ image: IsDevImg }} />
 
       <ReactMarkdown
         source={compareIsNotDevMd}
-        renderers={{ image: BuildImg }} />
+        renderers={{ image: BuildImg }}
+      />
 
-      <CodeBlock
-        comment="package.json 파일 수정"
-        language="json" >
+      <CodeBlock comment="package.json 파일 수정" language="json">
         {packageJson}
       </CodeBlock>
 
-      <CodeBlock
-        comment="실행"
-        language="bash" >
+      <CodeBlock comment="실행" language="bash">
         {yarnStart}
       </CodeBlock>
 
-      <ReactMarkdown
-        source={ejectMd}
-      />
+      <ReactMarkdown source={ejectMd} />
 
       <HorizontalContents>
         <LeftContent>
-          <Figure
-            srcUrl={configImg}
-            caption="config 디렉터리" />
+          <Figure srcUrl={configImg} caption="config 디렉터리" />
         </LeftContent>
 
         <RightContent>
-          <Figure
-            srcUrl={scirptsImg}
-            caption="config 디렉터리" />
+          <Figure srcUrl={scirptsImg} caption="config 디렉터리" />
         </RightContent>
       </HorizontalContents>
     </Layout>

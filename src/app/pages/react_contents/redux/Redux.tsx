@@ -10,7 +10,7 @@ import {
   TodoContainerCode,
   TodoModuleCode,
   CombineStoreCode,
-  RootCode
+  RootCode,
 } from "./ReduxContents";
 import TodoListContainer from "../../../container/TodoListContainer";
 
@@ -38,33 +38,52 @@ export const Redux = () => {
       {title}
       <ReactMarkdown source={installMD} />
 
-      <CodeBlock comment="./src/app/components/TodoRedux/TodoForm.tsx" language="tsx">
+      <CodeBlock
+        comment="./src/app/components/TodoRedux/TodoForm.tsx"
+        language="tsx"
+      >
         {ReduxTodoFormCode}
       </CodeBlock>
 
-      <CodeBlock comment="./src/app/components/TodoRedux/TodoItem.tsx" language="tsx">
+      <CodeBlock
+        comment="./src/app/components/TodoRedux/TodoItem.tsx"
+        language="tsx"
+      >
         {ReduxTodoItemCode}
       </CodeBlock>
 
-      <CodeBlock comment="./src/app/components/TodoRedux/TodoList.tsx" language="tsx">
+      <CodeBlock
+        comment="./src/app/components/TodoRedux/TodoList.tsx"
+        language="tsx"
+      >
         {ReduxTodoListCode}
       </CodeBlock>
 
-
-      <CodeBlock comment="./src/app/store/modules/todo.ts" language="typescript">
+      <CodeBlock
+        comment="./src/app/store/modules/todo.ts"
+        language="typescript"
+      >
         {TodoModuleCode}
       </CodeBlock>
 
-      <CodeBlock comment="./src/app/store/modules/index.ts" language="typescript">
+      <CodeBlock
+        comment="./src/app/store/modules/index.ts"
+        language="typescript"
+      >
         {CombineStoreCode}
       </CodeBlock>
 
-
-      <CodeBlock comment="./src/app/container/TodoListContainer.tsx" language="typescript">
+      <CodeBlock
+        comment="./src/app/container/TodoListContainer.tsx"
+        language="typescript"
+      >
         {TodoContainerCode}
       </CodeBlock>
 
-      <CodeBlock comment="./src/app/store/configureStore.ts" language="typescript">
+      <CodeBlock
+        comment="./src/app/store/configureStore.ts"
+        language="typescript"
+      >
         {ConfigureStoreCode}
       </CodeBlock>
 

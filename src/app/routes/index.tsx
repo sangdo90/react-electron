@@ -5,11 +5,11 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-// import { createBrowserHistory, History } from "history";
+import { createBrowserHistory, History } from "history";
 import { MENU_LIST } from "../components/sidemenu/menu";
 import { CRA, CreatedWebpack } from "../pages";
 
-// const history: History = createBrowserHistory();
+const history: History = createBrowserHistory();
 
 const Routes = () => {
   const [menu, setMenu] = useState<any[]>([]);
@@ -40,14 +40,14 @@ const Routes = () => {
           const { component: Component, ...rest } = data;
           return (
             <Route
+              key={data + i.toString()}
               exact
-              key={i.toString()}
               {...rest}
               render={(routeProps) => <Component {...routeProps} />}
             />
           );
         })}
-        <Redirect path="*" to="/" />
+        {/* <Redirect path="*" to="/" /> */}
       </Switch>
     </Router>
   );
