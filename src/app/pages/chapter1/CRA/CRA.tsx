@@ -11,6 +11,10 @@ import {
   yarnStart,
   packageJson,
 } from "./CRACodeContents";
+import isDevImg from '../../../assets/images/is_dev.png';
+import buildImg from '../../../assets/images/build_electron.png';
+import configImg from '../../../assets/images/config_dir.png';
+import scirptsImg from '../../../assets/images/scripts_dir.png';
 
 const title: string = " Create React App + electron ";
 
@@ -66,10 +70,6 @@ const ejectMd = `
 **eject를 한 번 하면 이전 상태로 돌아갈 수 없음**
 `;
 
-const isDevImg = "./images/is_dev.png";
-const buildImg = "./images/build_electron.png";
-const configImg = "./images/config_dir.png";
-const scirptsImg = "./images/scripts_dir.png";
 
 const IsDevImg = (): JSX.Element => {
   return (

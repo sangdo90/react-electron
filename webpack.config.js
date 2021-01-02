@@ -3,11 +3,11 @@ const path = require('path');
 
 function srcPaths(src) {
     return path.join(__dirname, src);
-  }
+}
 
 const electronConfiguration = {
     mode: 'development',
-    entry: './src/main.ts',
+    entry: './src/main.js',
     target: 'electron-main',
     resolve: {
         alias: {
@@ -57,6 +57,13 @@ const reactConfiguration = {
                     'css-loader',
                     'sass-loader',
                 ],
+            },
+            {
+                test: /\.(png|jpe?g|gif|jp2|webp)$/,
+                loader: 'file-loader',
+                options: {
+                  name: 'images/[name].[ext]'
+                }
             }
         ]
     },

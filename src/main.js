@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 
-const createWindow = (): void => {
+const createWindow = () => {
     let win = new BrowserWindow({
         width: 1600,
         height: 900,
