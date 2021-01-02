@@ -30,8 +30,8 @@ export const CodeBlock = (
   { comment, language, style, children, marginTop, marginBottom }: CodeBlockProps,
 ) => {
 
-  console.log(marginBottom, marginTop)
-  console.log(comment)
+  // console.log(marginBottom, marginTop)
+  // console.log(comment)
   return (
     <Block marginTop={marginTop} marginBottom={marginBottom}>
       <p>

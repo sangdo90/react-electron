@@ -29,6 +29,7 @@ const Routes = () => {
         });
       }
     });
+    console.log(tmpMenu)
     setMenu(tmpMenu);
   };
 
