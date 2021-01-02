@@ -37,7 +37,7 @@ const Routes = () => {
                 <Route exact path="/chapter3" component={Chapter3} />
                 <Redirect path="*" to="/" /> */}
                 <Route exact path="/" component={CRA} />
-                {menu.map((data, i) => {
+                {/* {menu.map((data, i) => {
                     const { component: Component, ...rest } = data;
                     console.log(data)
                     return (
@@ -48,7 +48,8 @@ const Routes = () => {
                             render={(routeProps) => <Component {...routeProps} />}
                         />
                     );
-                })}
+                })} */}
+                <Redirect path="*" to="/" />
             </Switch>
         </Router>
     );
