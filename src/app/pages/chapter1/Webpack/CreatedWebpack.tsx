@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout } from "../../../components";
+import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import {
   InstallContents,
@@ -18,18 +19,55 @@ import {
   appTsx,
   packageJson,
   tsConfigJson
-  
+
 } from "./CodeContents";
 import { CodeBlock } from "../../../components";
+
+const HorizontalContents = styled.div`
+display : flex;
+`;
+const LeftContent = styled.div`
+flex : 1;
+margin-right : 40px;
+`;
+const MiddleContent = styled.div`
+flex : 1;
+margin : auto;
+`;
+const RightContent = styled.div`
+flex : 1;
+margin-left : 40px;
+`;
 
 
 const title: string = "React + Webpack + Electron + Typescript Setting up";
 
+const installMd = `
+# 1. Install
+## 사용 기술 및 패키지
+- Electron
+- React
+- Typescript
+- Webpack
+`;
+
+
+const tsconfigMd = `
+* tsconfig.json 파일은 프로젝트를 컴파일하는 데 필요한 루트 파일과 컴파일러 옵션을 지정  
+   -- Typescript로 짜여진 코드를 Javascriptf로 변환해줄 compiler 역할
+* tsconfig.json 파일이 있는 위치가 TypeScript Prject root directory가 됨  
+[tsconfig 옵션](https://www.typescriptlang.org/tsconfig)  
+[tsconfig 스키마](http://json.schemastore.org/tsconfig)
+        `
+
 export const CreatedWebpack = () => {
   return (
     <Layout title={title}>
-      
-      {/* <ReactMarkdown source={InstallContents} /> */}
+
+      <ReactMarkdown
+        source={installMd}
+        renderers={{ code: CodeBlock }} />
+
 
       <CodeBlock
         comment="Project setup"
@@ -43,18 +81,30 @@ export const CreatedWebpack = () => {
         {tsSetup}
       </CodeBlock>
 
-      <CodeBlock
-        comment="tsconfig.json file"
-        language="bash" >
-        {tsConfig1}
-      </CodeBlock>
+      <HorizontalContents>
 
-      or 
-      <CodeBlock
-        comment="tsc command"
-        language="bash" >
-        {tsConfig2}
-      </CodeBlock>
+        <LeftContent>
+          <CodeBlock
+            comment="tsconfig.json file"
+            language="bash" >
+            {tsConfig1}
+          </CodeBlock>
+        </LeftContent>
+
+        <div style={{ margin: 'auto' }}><p > 또는 </p></div>
+
+        <RightContent>
+          <CodeBlock
+            comment="tsc command"
+            language="bash" >
+            {tsConfig2}
+          </CodeBlock>
+        </RightContent>
+
+      </HorizontalContents>
+
+      <ReactMarkdown
+        source={tsconfigMd} />
 
       <CodeBlock
         comment="tsconfig 수정"
@@ -69,7 +119,7 @@ export const CreatedWebpack = () => {
       </CodeBlock>
 
       <CodeBlock
-        comment="src 에 index.html main.ts 파일 생성"
+        comment="src 에 index.html,  main.ts 파일 생성"
         language="bash" >
         {elecSetup}
       </CodeBlock>
@@ -124,7 +174,7 @@ export const CreatedWebpack = () => {
         language="json" >
         {packageJson}
       </CodeBlock>
-  
+
     </Layout>
   );
 };

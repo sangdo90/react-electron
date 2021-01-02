@@ -41,7 +41,7 @@ const Title = styled.div`
 `;
 
 const SubWrap = styled.div`
-  width: 95%;
+  width: 98%;
   height: 95%
   margin: 0 auto;
   // position: absolute;

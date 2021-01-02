@@ -37,6 +37,12 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
-    "react-pro-sidebar": "^0.5.0"
+    "@types/react-redux": "^7.1.15",
+    "electron-is-dev": "^1.2.0",
+    "node-sass": "^5.0.0",
+    "react-pro-sidebar": "^0.5.0",
+    "react-redux": "^7.2.2",
+    "recoil": "^0.1.2",
+    "redux": "^4.0.5"
   }
 }
