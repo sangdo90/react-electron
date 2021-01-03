@@ -60,6 +60,12 @@ const tsconfigMd = `
 [tsconfig 스키마](http://json.schemastore.org/tsconfig)
         `
 
+const tsconfig2Md = `
+* esModuleInterop   
+  - false 일 경우 import 구문에서 에러가 발생
+  - true로 설정될 경우, ES6 모듈 사양을 준수하여 CommonJS 모듈을 가져옴
+`;
+
 export const CreatedWebpack = () => {
   return (
     <Layout title={title}>
@@ -111,6 +117,9 @@ export const CreatedWebpack = () => {
         language="json" >
         {tsConfigJson}
       </CodeBlock>
+
+      <ReactMarkdown
+        source={tsconfig2Md} />
 
       <CodeBlock
         comment="electron Install"

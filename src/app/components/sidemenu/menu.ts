@@ -23,14 +23,14 @@ export const MENU_LIST = {
     },
   },
   React: {
-    Redux: {
-      path: "/redux",
-      component: Redux,
-    },
     Recoil: {
       path: "/recoil",
       component: Recoil,
     },
+    Redux: {
+        path: "/redux",
+        component: Redux,
+      }
   },
   Chapter3: {
     path: "/chapter3",

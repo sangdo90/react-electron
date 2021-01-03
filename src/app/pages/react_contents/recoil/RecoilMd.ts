@@ -1,11 +1,35 @@
 export const IntroMd = `
-## Recoil 개요
+## Recoil
+### React 상태관리 라이브러리
+
 Recoil은 Context API 기반으로 구현되었으며  **함수형 컴포넌트에서만** 사용 가능  
 Recoil 대부분 훅(Hooks)로 구현되어있어 Hooks를 사용하는 사람들에게는 익숙함  
 Recoil을 시작하기 위해서는 애플리케이션을 \`RecoilRoot\`로 감싸고, 데이터를 \`atom\`이라는 단위로 선언하여  
-\`useState\` 대신 \`useRecoilState\`로 대체해서 사용한다
+\`useState\` 대신 \`useRecoilState\`로 대체해서 사용   
 
-### Installation
+### useState Example
+~~~jsx
+import React, { useState } from 'react';
+
+function Example() {
+  // 새로운 state 변수 값과 setter 함수 선언
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+~~~
+
+
+
+
+## Installation
 ~~~bash
 npm install recoil 
 ~~~
@@ -163,6 +187,7 @@ const TodoForm = () => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setContent("");
+    // setter 함수는 순수 함수이기 때문에 shallow copy를 이용해 상태를 변경
     setTodo((todo) => {
       const id = todo.length ? todo[todo.length - 1].id + 1 : 0;
       return [...todo, { id, content }];
