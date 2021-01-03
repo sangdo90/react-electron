@@ -53,9 +53,16 @@ electron 앱을 새로 빌드 하지않고 webpack을 통해 React 앱만 수정
 
 const compareIsNotDevMd = `
 ## electron-webpack-version
-![](notDev.png)  
+![](notDev.png)  ㄴ
 Webpack으로 묶인 React 파일이 Electron 앱에 포함되어서 실행 파일로 만들어짐
 `;
+
+const packageJsonMd = `
+- main을 \`public/electron.js\` (electron 파일 위치)로하고 
+- homepage를 넣어줘야 빌드 됨  
+- 참고 [CRA deployment.md](https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/deployment.md#building-for-relative-paths)
+`;
+
 
 const ejectMd = `
 ## Eject  
@@ -125,6 +132,8 @@ export const CRA = () => {
       <CodeBlock comment="package.json 파일 수정" language="json">
         {packageJson}
       </CodeBlock>
+
+      <ReactMarkdown source={packageJsonMd} />
 
       <CodeBlock comment="실행" language="bash">
         {yarnStart}

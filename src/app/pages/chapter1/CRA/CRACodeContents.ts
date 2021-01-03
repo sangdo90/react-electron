@@ -52,14 +52,18 @@ function createWindow() {
     mainWindow.focus();
 }
 
+// Electron이 로드된 직후 한번만 발생
 app.on("ready", createWindow);
 
+// 모든 윈도우를 닫을 때 발생
 app.on("window-all-closed", () => {
     if (process.platform !== "darwin") {
         app.quit();
     }
 });
 
+// 애플리케이션이 활성화될 때 발생
+// 처음 애플리케이션을 실행할 때, 애플리케이션을 실행 중이지만 또 다시 실행할 때, 또는 애플리케이션의 독이나 작업표시줄 아이콘을 클릭할 때 등
 app.on("activate", () => {
     if (mainWindow === null) {
         createWindow();
